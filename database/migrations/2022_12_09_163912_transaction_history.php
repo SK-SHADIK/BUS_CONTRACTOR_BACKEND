@@ -17,7 +17,7 @@ return new class extends Migration
         Schema::create('transaction_history', function (Blueprint $table) {
             $table->id('t_id');
             $table->string('t_pname');
-            $table->string('t_type');
+            $table->string('t_amount');
             $table->string('t_method');
             $table->timestamps();
         });

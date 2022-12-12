@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('c_mail');
             $table->string('c_pass');
             $table->string('c_add');
-            $table->string('s_pass');
             $table->timestamps();
         });
     }

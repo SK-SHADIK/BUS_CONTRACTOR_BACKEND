@@ -6,7 +6,7 @@ use App\Http\Controllers\BusContractor;
 
 use Illuminate\Http\Request;
 use App\Models\TransactionHistory;
-use App\Models\BusContractorM;
+use App\Models\Bus;
 
 class BusContractor extends Controller
 {
@@ -58,12 +58,13 @@ class BusContractor extends Controller
         return response()->json($data);
 
     }
-    function Profile (){
-        $data = BusContractorM::where('t_id','=',1)->first();
+    function Profile (Request $req){
+        $c_id=$req->id;
+        $data = Bus::where('c_id', $c_id)->first();
         return response()->json($data);
     }
     function ProfileUpdate (Request $req){
-        $data = BusContractorM::find( $req->c_id);
+        $data = Bus::find( $req->c_id);
         $data->c_name = $req->c_name;
         $data->c_mail = $req->c_mail;
         $data->c_pass = $req->c_pass;
